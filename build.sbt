@@ -1,7 +1,3 @@
-import AssemblyKeys._
-
-assemblySettings
-
 name := "Surge Pricing Demo"
 version := "1.0"
 organization := "ram.pradhan.demo"
@@ -24,4 +20,3 @@ assemblyMergeStrategy in assembly := {
  case x => MergeStrategy.first
 }
 
-jarName in assembly := "SurgePricingDemoAssembly.jar"
