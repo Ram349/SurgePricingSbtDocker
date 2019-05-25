@@ -1,3 +1,7 @@
+import AssemblyKeys._
+
+assemblySettings
+
 name := "Surge Pricing Demo"
 version := "1.0"
 organization := "ram.pradhan.demo"
@@ -13,7 +17,11 @@ scalaVersion := "2.11.8"
 								 "org.apache.spark" %% "spark-streaming" % "2.3.0"
 								)
 
+								
+								
 assemblyMergeStrategy in assembly := {
  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
  case x => MergeStrategy.first
 }
+
+jarName in assembly := "SurgePricingDemoAssembly.jar"
