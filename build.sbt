@@ -11,20 +11,20 @@ scalaVersion := "2.11.8"
 								 "org.apache.spark" %% "spark-sql-kafka-0-10" % "2.1.0",
 								 "org.apache.spark" %% "spark-streaming-kafka-0-10" % "2.3.0",
 								 "org.apache.spark" %% "spark-streaming" % "2.3.0",
-								 "com.spotify" % "docker-client" % "3.5.13"
+								 
 								)
 
 						
 
-enablePlugins(DockerSpotifyClientPlugin)
+enablePlugins(DockerPlugin)
+
+docker <<= (docker dependsOn assembly)
 
 dockerfile in docker := {
-  // The assembly task generates a fat JAR file
-  val artifact: File = assembly.value
+  val artifact = (outputPath in assembly).value
   val artifactTargetPath = s"/app/${artifact.name}"
-
   new Dockerfile {
-    from("openjdk:8-jre")
+    from("java")
     add(artifact, artifactTargetPath)
     entryPoint("java", "-jar", artifactTargetPath)
   }
