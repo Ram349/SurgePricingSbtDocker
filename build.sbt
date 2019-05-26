@@ -10,7 +10,7 @@ scalaVersion := "2.11.8"
 								 "org.apache.kafka" %% "kafka" % "2.1.0",
 								 "org.apache.spark" %% "spark-sql-kafka-0-10" % "2.1.0",
 								 "org.apache.spark" %% "spark-streaming-kafka-0-10" % "2.3.0",
-								 "org.apache.spark" %% "spark-streaming" % "2.3.0",
+								 "org.apache.spark" %% "spark-streaming" % "2.3.0"
 								 
 								)
 
