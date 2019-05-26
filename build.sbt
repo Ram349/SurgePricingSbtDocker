@@ -16,7 +16,7 @@ scalaVersion := "2.11.8"
 
 						
 
-enablePlugins(DockerPlugin)
+enablePlugins(sbtdocker.DockerPlugin)
 
 dockerfile in docker := {
   // The assembly task generates a fat JAR file
