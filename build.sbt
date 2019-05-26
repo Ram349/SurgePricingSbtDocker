@@ -14,7 +14,7 @@ scalaVersion := "2.11.8"
 								 "com.spotify" % "docker-client" % "3.5.13"
 								)
 
-assemblyJarName in assembly := "SurgePricingDemoAssembly.jar"							
+						
 
 enablePlugins(DockerPlugin)
 
