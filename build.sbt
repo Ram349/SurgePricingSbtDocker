@@ -16,7 +16,7 @@ scalaVersion := "2.11.8"
 
 						
 
-enablePlugins(sbtdocker.DockerPlugin)
+enablePlugins(DockerSpotifyClientPlugin)
 
 dockerfile in docker := {
   // The assembly task generates a fat JAR file
