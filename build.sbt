@@ -21,10 +21,10 @@ enablePlugins(DockerPlugin)
 docker <<= (docker dependsOn assembly)
 
 dockerfile in docker := {
-  val artifact = (outputPath in assembly).value
+  val artifact = (assemblyOutputPath in assembly).value
   val artifactTargetPath = s"/app/${artifact.name}"
   new Dockerfile {
-    from("java")
+    from("openjdk:8-jre")
     add(artifact, artifactTargetPath)
     entryPoint("java", "-jar", artifactTargetPath)
   }
